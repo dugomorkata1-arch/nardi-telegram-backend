@@ -7,9 +7,7 @@ const app = express();
 app.use(cors());
 app.use(bodyParser.json());
 
-const PORT = process.env.PORT || 3000;
-
-// የእርስዎ ትክክለኛ የቦት ቶከን እና አድሚን ቻት አይዲ
+// የእርስዎ ትክክለኛ የቦት ቶከን እና አድሚን ቻት አይዲ (እንደተጠበቁ ናቸው)
 const BOT_TOKEN = '9059201592:AAHbnIdpAQY4Pak6ba7tbI-ccZJwMZhME0w';
 const ADMIN_CHAT_ID = '9258155047';
 
@@ -47,6 +45,5 @@ app.post('/api/verify-code', async (req, res) => {
     res.json({ success: true });
 });
 
-app.listen(PORT, () => {
-    console.log(`Server running on port ${PORT}`);
-});
+// ለ Vercel ስራ እንዲመች አድናቂው app.listen ተወግዶ ይህ ተካቷል
+module.exports = app;
